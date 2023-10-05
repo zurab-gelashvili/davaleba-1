@@ -9,33 +9,34 @@ function myfunction1(a, b) {
 }
 
 console.log(myfunction1(100, "asi"))
+console.log(myfunction1(100, 100))
 
 
 /// davaleba 2 
 
 function myfunction2(fahrenheit) {
   if (typeof fahrenheit === `number`) {
-    return (5 / 9) * (fahrenheit - 32) + " °C"
+    let celsius = (5 / 9) * (fahrenheit - 32) + " °C";
+    return celsius
 
   } else {
     return false
   }
 }
 
-console.log(myfunction2(150))
+console.log(myfunction2(250))
+console.log(myfunction2(20))
 
 
 
 
 ///3
 
-function performOperation(a, b, op) {
-  // Check if a and b are numbers and op is a valid operation
+function myfunction3 (a, b, op) {
   if (typeof a !== 'number' || typeof b !== 'number' || !/^[+\-*/]$/.test(op)) {
-    return false; // Return false if any input is invalid
+    return false;
   }
-
-  // Perform the specified operation and return the result
+  
   switch (op) {
     case '+':
       return a + b;
@@ -49,13 +50,14 @@ function performOperation(a, b, op) {
       }
       return a / b;
     default:
-      return false; // Return false for unknown operation
+      return false;
   }
 }
 
-// Example usage:
-console.log(performOperation(5, 3, '+')); // Output: 8
-console.log(performOperation(10, 4, '-')); // Output: 6
-console.log(performOperation(7, 2, '*')); // Output: 14
-console.log(performOperation(8, 0, '/')); // Output: "Division by zero is not allowed"
-console.log(performOperation(4, 6, '%')); // Output: false
+
+console.log(myfunction3(5, 3, '+')); 
+console.log(myfunction3(10, 4, '-')); 
+console.log(myfunction3(7, 2, '*')); 
+console.log(myfunction3(8, 0, '/')); 
+console.log(myfunction3(8, 2, '/')); 
+console.log(myfunction3(4, 6, '%'));
